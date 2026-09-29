@@ -1,0 +1,15 @@
+body {
+    background-color: #303030;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.description {
+    color: #cccccc;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}

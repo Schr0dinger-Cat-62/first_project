@@ -1,32 +1,25 @@
-"use client";
-import { useEffect, useState } from "react";
-type Pokemon = {
-  name: string;
-  url: string;
-}
-
 export default function Home() {
-  const [pokemonList, setPokemonList] =
-    useState<Pokemon[]>([]);
-  useEffect(() => {
-    async function getPokemon() {
-      const response = await fetch(
-"https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"      );
-      const data = await response.json();
-      setPokemonList(data.results);
-    }
-    getPokemon();
-  }, []);
   return (
     <main>
-      <h1>나만의 포켓몬 도감</h1>
-      <div>
-        {pokemonList.map((pokemon) => (
-          <div key={pokemon.name}>
-            <h2>{pokemon.name}</h2>
-          </div>
-        ))}
+    <section id="user-profile">
+      <h2 className="title">내 프로필</h2>
+      <div className="description">
+        <figure>
+          <figcaption>미래융합학부 26학번 김민철</figcaption>
+        </figure>
       </div>
+    </section>
+    <section id="progress-stats">
+      <h2 className="title">학습 진도율</h2>
+      <div className="description">
+        <figure>
+          <figcaption>
+            이번 주 온라인 강의 출석률: <strong>100%</strong> 달성
+            실습 과제 제출 현황: 2개 완료 / 1개 진행 중
+          </figcaption>
+      </figure>
+      </div>
+    </section>
     </main>
   );
 }
